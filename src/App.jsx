@@ -2,7 +2,7 @@ import { LuChevronsRight } from "react-icons/lu";
 import './App.css'
 import { useEffect, useState } from "react";
 
-const url = 'https://api.jsonbin.io/v3/b/6884d95f7b4b8670d8a7a6b7';
+const url = 'https://api.npoint.io/d30d080f2dcdeb3623ea';
 
 const App = () => {
     const [people, setPeople] = useState([]);
@@ -14,7 +14,6 @@ const App = () => {
             try {
                 let resposne = await fetch(url);
                 let data = await resposne.json();
-                data = data.record;
                 setPeople(data);
                 setActiveID(data[0].id);
                 setCurrentPerson(data[0]);
